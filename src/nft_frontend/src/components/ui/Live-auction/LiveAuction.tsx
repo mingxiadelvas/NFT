@@ -1,10 +1,9 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-
-import NftCard from '../Nft-card/NftCard';
-import { NFT__DATA } from '../../../../assets/data/data';
-import './live-auction.css';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import NftCard from "../Nft-card/NftCard";
+import { NFT__DATA } from "../../../../assets/data/data";
+import "./live-auction.css";
 
 const LiveAuction = () => {
   return (
@@ -21,7 +20,7 @@ const LiveAuction = () => {
           </Col>
 
           {NFT__DATA.slice(0, 6).map((item) => (
-            <Col lg="3" key={item.id} className="mb-4">
+            <Col lg="3" md="4" sz="6" key={item.id} className="mb-4">
               <NftCard
                 id={item.id}
                 title={item.title}

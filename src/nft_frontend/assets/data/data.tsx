@@ -1,19 +1,19 @@
-import img01 from '../img/img-01.jpg'
-import img02 from '../img/img-02.jpg';
-import img03 from '../img/img-03.jpg';
-import img04 from '../img/img-04.jpg';
-import img05 from '../img/img-05.jpg';
-import img06 from '../img/img-06.jpg';
-import img07 from '../img/img-07.jpg';
-import img08 from '../img/img-08.jpg';
-import img09 from '../img/img-09.jpg';
+import img01 from "../img/img-01.jpg";
+import img02 from "../img/img-02.jpg";
+import img03 from "../img/img-03.jpg";
+import img04 from "../img/img-04.jpg";
+import img05 from "../img/img-05.jpg";
+import img06 from "../img/img-06.jpg";
+import img07 from "../img/img-07.jpg";
+import img08 from "../img/img-08.jpg";
+import img09 from "../img/img-09.jpg";
 
-import ava01 from '../img/ava-01.png';
-import ava02 from '../img/ava-02.png';
-import ava03 from '../img/ava-03.png';
-import ava04 from '../img/ava-04.png';
-import ava05 from '../img/ava-05.png';
-import ava06 from '../img/ava-06.png';
+import ava01 from "../img/ava-01.png";
+import ava02 from "../img/ava-02.png";
+import ava03 from "../img/ava-03.png";
+import ava04 from "../img/ava-04.png";
+import ava05 from "../img/ava-05.png";
+import ava06 from "../img/ava-06.png";
 
 export const NFT__DATA = [
   {
