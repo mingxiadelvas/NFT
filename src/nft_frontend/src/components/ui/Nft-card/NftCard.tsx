@@ -17,13 +17,13 @@ const NftCard = (props: Item) => {
   const handleClick = () => {
     if (!showModal) {
       setShowModal(true);
-    } 
+    }
   };
 
   return (
     <div className="single__nft__card">
       <div className="nft__img">
-        <img src={props.imgUrl} alt="image01" className="w-100" />
+        <img src={props.imgUrl} alt="Image" className="w-100" />
       </div>
 
       <div className="nft__content">
@@ -33,7 +33,7 @@ const NftCard = (props: Item) => {
 
         <div className="creator__info-wrapper d-flex gap-3">
           <div className="creator__img">
-            <img src={props.creatorImg} alt="avatar01" className="w-100" />
+            <img src={props.creatorImg} alt="Avatar" className="w-100" />
           </div>
 
           <div className="creator__info w-100 d-flex align-items-center justify-content-between">
