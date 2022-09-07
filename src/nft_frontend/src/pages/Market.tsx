@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CommonSection from "../components/ui/Common-section/CommonSection";
 import NftCard from "../components/ui/Nft-card/NftCard";
 import { NFT__DATA } from "../../assets/data/data";
-import '../styles/market.css';
+import "../styles/market.css";
 
 const Market = () => {
+  const [data, setData] = useState(NFT__DATA);
+
   const handleCategory = () => {};
 
   const handleItems = () => {};
 
-  const handleSort = () => {};
+  const handleSort = (e: { target: { value: string } }) => {
+    const filterValue = e.target.value;
+    if (filterValue == "high") {
+      const filterData = NFT__DATA.filter((item) => item.currentBid >= 6);
+      setData(filterData);
+    } else if (filterValue == "mid") {
+      const filterData = NFT__DATA.filter(
+        (item) => item.currentBid >= 5.5 && item.currentBid < 6
+      );
+      setData(filterData);
+    } else {
+      const filterData = NFT__DATA.filter(
+        (item) => item.currentBid >= 4.89 && item.currentBid < 5.5
+      );
+      setData(filterData);
+    }
+  };
   return (
     <>
       <CommonSection title={"MarketPlace"} />
@@ -51,7 +69,7 @@ const Market = () => {
               </div>
             </Col>
 
-            {NFT__DATA.map((item) => (
+            {data?.map((item) => (
               <Col lg="3" md="4" sz="6" key={item.id} className="mb-4">
                 <NftCard
                   id={item.id}
