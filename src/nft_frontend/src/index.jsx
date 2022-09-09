@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "remixicon/fonts/remixicon.css";
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById("root")
 );
 root.render(
   <React.StrictMode>

@@ -1,18 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import Modal from "../Modal/Modal";
 import "./nft-card.css";
 
-interface Item {
-  title: string;
-  id: string;
-  currentBid: number;
-  creatorImg: string;
-  imgUrl: string;
-  creator: string;
-}
-
-const NftCard = (props: Item) => {
+const NftCard = ({ title, id, currentBid, creatorImg, imgUrl, creator }) => {
   const [showModal, setShowModal] = useState(false);
   const handleClick = () => {
     if (!showModal) {
@@ -23,28 +15,28 @@ const NftCard = (props: Item) => {
   return (
     <div className="single__nft__card">
       <div className="nft__img">
-        <img src={props.imgUrl} alt="Image" className="w-100" />
+        <img src={imgUrl} alt="Image" className="w-100" />
       </div>
 
       <div className="nft__content">
         <h5 className="nft__title">
-          <Link to={`/market/${props.id}`}>{props.title}</Link>
+          <Link to={`/market/${id}`}>{title}</Link>
         </h5>
 
         <div className="creator__info-wrapper d-flex gap-3">
           <div className="creator__img">
-            <img src={props.creatorImg} alt="Avatar" className="w-100" />
+            <img src={creatorImg} alt="Avatar" className="w-100" />
           </div>
 
           <div className="creator__info w-100 d-flex align-items-center justify-content-between">
             <div>
               <h6>Created By</h6>
-              <p>{props.creator}</p>
+              <p>{creator}</p>
             </div>
 
             <div>
               <h6>Current Bid</h6>
-              <p>{props.currentBid} ICP</p>
+              <p>{currentBid} ICP</p>
             </div>
           </div>
         </div>
@@ -68,5 +60,14 @@ const NftCard = (props: Item) => {
     </div>
   );
 };
+
+NftCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  currentBid: PropTypes.number,
+  creatorImg: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string.isRequired,
+  creator: PropTypes.string,
+}
 
 export default NftCard;

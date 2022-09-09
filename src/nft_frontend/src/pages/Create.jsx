@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CommonSection from "../components/ui/Common-section/CommonSection";
 import NftCard from "../components/ui/Nft-card/NftCard";
-import image from "../../assets/img/img-01.jpg";
-import avatar from "../../assets/img/ava-01.png";
+import image from "../../../../public/img-01.jpg";
+import avatar from "../../../../public/ava-01.png";
 import "../styles/create-item.css";
 
 const item = {

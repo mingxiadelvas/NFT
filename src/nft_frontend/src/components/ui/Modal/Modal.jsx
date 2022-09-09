@@ -1,11 +1,8 @@
 import React, { useCallback } from "react";
+import PropTypes from 'prop-types';
 import "./modal.css";
 
-type ShowPopUp = {
-  close: () => void;
-};
-
-const Modal: React.FC<ShowPopUp> = ({ close }) => {
+const Modal = ({ close }) => {
   const onClick = useCallback(() => {
     close();
   }, [close]);
@@ -50,6 +47,11 @@ const Modal: React.FC<ShowPopUp> = ({ close }) => {
       </div>
     </div>
   );
+};
+
+
+Modal.propTypes = {
+  close: PropTypes.func.isRequired
 };
 
 export default Modal;

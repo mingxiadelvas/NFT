@@ -12,7 +12,7 @@ const Market = () => {
 
   const handleItems = () => {};
 
-  const handleSort = (e: { target: { value: string } }) => {
+  const handleSort = (e) => {
     const filterValue = e.target.value;
     if (filterValue == "high") {
       const filterData = NFT__DATA.filter((item) => item.currentBid >= 6);

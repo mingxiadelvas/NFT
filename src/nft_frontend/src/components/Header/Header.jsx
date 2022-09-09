@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { Container } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import "./header.css";
@@ -23,24 +23,11 @@ const NAV__LINKS = [
 ];
 
 const Header = () => {
-  const headerRef = useRef<HTMLElement>(null);
-  const menuRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const bttHtmlEl: HTMLElement | null = headerRef.current;
-      if (bttHtmlEl) {
-        document.body.scrollTop > 80 || document.documentElement.scrollTop > 80
-          ? bttHtmlEl.classList.add("header__shrink")
-          : bttHtmlEl.classList.remove("header__shrink");
-      }
-    });
-  }, []);
-
-  // const toggleMenu = () => (menuRef.classList.toggle("active__menu"));
+  const menuRef = useRef(null);
+  const toggleMenu = () => (menuRef.classList.toggle("active__menu"));
 
   return (
-    <header className="header" ref={headerRef}>
+    <header className="header">
       <Container>
         <div className="navigation">
           <div className="logo">
@@ -52,7 +39,7 @@ const Header = () => {
             </h2>
           </div>
 
-          <div className="nav__menu" /*ref={menuRef} onClick={toggleMenu}*/>
+          <div className="nav__menu" /*ref={menuRef}*/ onClick={toggleMenu}>
             <ul className="nav__list">
               {NAV__LINKS.map((item, index) => (
                 <li className="nav__item" key={index}>
@@ -78,7 +65,7 @@ const Header = () => {
             </button>
 
             <span className="mobile__menu">
-              <i className="ri-menu-line" /* onClick={toggleMenu}*/></i>
+              <i className="ri-menu-line" /*onClick={toggleMenu}*/ />
             </span>
           </div>
         </div>

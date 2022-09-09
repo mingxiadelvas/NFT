@@ -8,7 +8,7 @@ const Contact = () => {
   const subjectRef = useRef("");
   const messageRef = useRef("");
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
   };
 
